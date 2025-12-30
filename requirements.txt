@@ -1,0 +1,25 @@
+# Deep Learning Core
+torch>=2.0.0
+torchvision
+torchaudio
+pytorch-lightning  # Para organizar o código de treino 
+
+# Data Processing & Feature Store
+pyspark            # Para processamento batch robusto 
+feast              # Feature Store [cite: 72, 106]
+pandas
+numpy
+scikit-learn
+
+# Vector Database Client & Caching
+qdrant-client      # Cliente para o Vector DB [cite: 82, 106]
+redis              # Para cache de latência ultra-baixa [cite: 111]
+
+# MLOps & Tracking
+mlflow             # Model Registry [cite: 19, 106]
+
+# Utilities
+tqdm               # Barras de progresso são vida
+matplotlib
+seaborn
+jupyterlab
