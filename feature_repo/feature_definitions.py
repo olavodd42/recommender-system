@@ -1,6 +1,10 @@
 from datetime import timedelta
 from feast import Entity, Field, FeatureView, FileSource
 from feast.types import Float32, Int64, String
+import os
+
+# Get the absolute path of the current file's directory
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # 1. Definir as Entidades (As chaves primárias do nosso mundo)
 customer = Entity(name="customer", join_keys=["customer_id"])
@@ -9,13 +13,13 @@ article = Entity(name="article", join_keys=["article_id"])
 # 2. Fonte de Dados (Aponta para os Parquets gerados no ETL)
 user_stats_source = FileSource(
     name="user_stats_source",
-    path="/feature_repo/data/user_features.parquet", # Path absoluto dentro do container ou relativo
+    path=os.path.join(CURRENT_DIR, "data", "user_features.parquet"),
     timestamp_field="event_timestamp",
 )
 
 item_stats_source = FileSource(
     name="item_stats_source",
-    path="/feature_repo/data/item_features.parquet",
+    path=os.path.join(CURRENT_DIR, "data", "item_features.parquet"),
     timestamp_field="event_timestamp",
 )
 

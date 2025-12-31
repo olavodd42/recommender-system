@@ -1,0 +1,3 @@
+embedding_dim: 32
+num_items: 8451
+num_users: 14761
