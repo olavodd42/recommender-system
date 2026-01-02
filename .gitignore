@@ -43,7 +43,7 @@ Thumbs.db
 
 # Project specific
 data/
-
+artifacts/
 qdrant_storage/
 .ipynb_checkpoints/
 .Trash*
